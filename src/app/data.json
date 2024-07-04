@@ -1,0 +1,463 @@
+{ "questions": [
+		{
+			"id": 1,
+			"slug": "language",
+			"type": "single-select",
+			"question": {
+				"en": "What is your preferred language?"
+			},
+			"description": {
+				"en": "Choose language"
+			},
+			"answers": [
+				{
+					"id": 11,
+					"text": {
+						"en": "English",
+						"fr": "English",
+						"de": "English",
+						"es": "English"
+					},
+					"img_URL": null,
+					"next": 20
+				},
+				{
+					"id": 12,
+					"text": {
+						"en": "French",
+						"fr": "French",
+						"de": "French",
+						"es": "French"
+					},
+					"img_URL": null,
+					"next": 20
+				},
+				{
+					"id": 13,
+					"text": {
+						"en": "German",
+						"fr": "German",
+						"de": "German",
+						"es": "German"
+					},
+					"img_URL": null,
+					"next": 20
+				},
+				{
+					"id": 14,
+					"text": {
+						"en": "Spanish",
+						"fr": "Spanish",
+						"de": "Spanish",
+						"es": "Spanish"
+					},
+					"img_URL": null,
+					"next": 20
+				}
+			],
+			"parent": null,
+			"children": []
+		},
+		{
+			"id": 20,
+			"slug": "gender",
+			"type": "single-select",
+			"question": {
+				"en": "What gender do you identify with?",
+				"fr": "À quel genre vous identifiez-vous ?",
+				"de": "Mit welchem Geschlecht identifizierst du dich?",
+				"es": ""
+			},
+			"description": {
+				"en": "Please share how do you identify yourself",
+				"fr": "Veuillez partager comment vous vous identifiez.",
+				"de": "",
+				"es": ""
+			},
+			"answers": [
+				{
+					"id": 201,
+					"text": {
+						"en": "Female",
+						"fr": "",
+						"de": "",
+						"es": ""
+					},
+					"img_URL": null,
+					"next": 300
+				},
+				{
+					"id": 202,
+					"text": {
+						"en": "Male",
+						"fr": "",
+						"de": "",
+						"es": ""
+					},
+					"img_URL": null,
+					"next": 300
+				},
+				{
+					"id": 203,
+					"text": {
+						"en": "Other",
+						"fr": "",
+						"de": "",
+						"es": ""
+					},
+					"img_URL": null,
+					"next": 300
+				}
+			],
+			"children": [],
+			"parent": 1
+		},
+		{
+			"id": 300,
+			"slug": "age",
+			"type": "single-select",
+			"question": {
+				"en": "What is your age?",
+				"fr": "",
+				"de": "",
+				"es": ""
+			},
+			"description": {
+				"en": "",
+				"fr": "",
+				"de": "",
+				"es": ""
+			},
+			"answers": [
+				{
+					"id": 3001,
+					"text": {
+						"en": "18-29 years",
+						"fr": "",
+						"de": "",
+						"es": ""
+					},
+					"img_URL": null,
+					"next": 4000
+				},
+				{
+					"id": 3002,
+					"text": {
+						"en": "30-39 years",
+						"fr": "",
+						"de": "",
+						"es": ""
+					},
+					"img_URL": null,
+					"next": 4000
+				},
+				{
+					"id": 3003,
+					"text": {
+						"en": "40-49 years",
+						"fr": "",
+						"de": "",
+						"es": ""
+					},
+					"img_URL": null,
+					"next": 4000
+				},
+				{
+					"id": 3004,
+					"text": {
+						"en": "50+",
+						"fr": "",
+						"de": "",
+						"es": ""
+					},
+					"img_URL": null,
+					"next": 4100
+				}
+			],
+			"parent": 20,
+			"children": []
+		},
+		{
+			"id": 4000,
+			"slug": "hate_book",
+			"type": "multiply-select",
+			"question": {
+				"en": "What do you hate the most in a book?",
+				"fr": "",
+				"de": "",
+				"es": ""
+			},
+			"description": {
+				"en": "",
+				"fr": "",
+				"de": "",
+				"es": ""
+			},
+			"answers": [
+				{
+					"id": 40001,
+					"text": {
+						"en": "Lack of logic",
+						"fr": "",
+						"de": "",
+						"es": ""
+					},
+					"img_URL": null,
+					"next": 50000
+				},
+				{
+					"id": 40002,
+					"text": {
+						"en": "A slow speed",
+						"fr": "",
+						"de": "",
+						"es": ""
+					},
+					"img_URL": null,
+					"next": 50000
+				},
+				{
+					"id": 40003,
+					"text": {
+						"en": "Lack of humor",
+						"fr": "",
+						"de": "",
+						"es": ""
+					},
+					"img_URL": null,
+					"next": 50000
+				},
+				{
+					"id": 40004,
+					"text": {
+						"en": "Way too generic ending",
+						"fr": "",
+						"de": "",
+						"es": ""
+					},
+					"img_URL": null,
+					"next": 50000
+				}
+			],
+			"prev": 3000,
+			"children": []
+		},
+		{
+			"id": 41000,
+			"slug": "age",
+			"type": "single-select",
+			"question": {
+				"en": "What do you hate the most in a book?",
+				"fr": "",
+				"de": "",
+				"es": ""
+			},
+			"description": {
+				"en": "",
+				"fr": "",
+				"de": "",
+				"es": ""
+			},
+			"answers": [
+				{
+					"id": 41001,
+					"text": {
+						"en": "Lack of logic",
+						"fr": "",
+						"de": "",
+						"es": ""
+					},
+					"img_URL": null,
+					"next": 51000
+				},
+				{
+					"id": 41002,
+					"text": {
+						"en": "A slow speed",
+						"fr": "",
+						"de": "",
+						"es": ""
+					},
+					"img_URL": null,
+					"next": 51000
+				},
+				{
+					"id": 41003,
+					"text": {
+						"en": "Lack of humor",
+						"fr": "",
+						"de": "",
+						"es": ""
+					},
+					"img_URL": null,
+					"next": 51000
+				},
+				{
+					"id": 41004,
+					"text": {
+						"en": "Way too generic ending",
+						"fr": "",
+						"de": "",
+						"es": ""
+					},
+					"img_URL": null,
+					"next": 51000
+				}
+			],
+			"parent": 3000,
+			"children": []
+		},
+		{
+			"id": 50000,
+			"slug": "fav_topics",
+			"type": "buble-select",
+			"question": {
+				"en": "What are your favorite topics?",
+				"fr": "",
+				"de": "",
+				"es": ""
+			},
+			"description": {
+				"en": "Choose up to 3 topics you like",
+				"fr": "",
+				"de": "",
+				"es": ""
+			},
+			"answers": [
+				{
+					"id": 500001,
+					"text": {
+						"en": "Werewolf",
+						"fr": "",
+						"de": "",
+						"es": ""
+					},
+					"img_URL": null,
+					"next": null
+				},
+				{
+					"id": 500002,
+					"text": {
+						"en": "Action",
+						"fr": "",
+						"de": "",
+						"es": ""
+					},
+					"img_URL": null,
+					"next": null
+				},
+				{
+					"id": 500003,
+					"text": {
+						"en": "Royal Obsession",
+						"fr": "",
+						"de": "",
+						"es": ""
+					},
+					"img_URL": null,
+					"next": null
+				},
+				{
+					"id": 500004,
+					"text": {
+						"en": "Romance",
+						"fr": "",
+						"de": "",
+						"es": ""
+					},
+					"img_URL": null,
+					"next": null
+				},
+				{
+					"id": 500005,
+					"text": {
+						"en": "Young Adult",
+						"fr": "",
+						"de": "",
+						"es": ""
+					},
+					"img_URL": null,
+					"next": null
+				},
+				{
+					"id": 500006,
+					"text": {
+						"en": "Bad Boy",
+						"fr": "",
+						"de": "",
+						"es": ""
+					},
+					"img_URL": null,
+					"next": null
+				},
+				{
+					"id": 500007,
+					"text": {
+						"en": "Billionaire",
+						"fr": "",
+						"de": "",
+						"es": ""
+					},
+					"img_URL": null,
+					"next": null
+				}
+			],
+			"prev": 4000,
+			"children": null
+		},
+		{
+			"id": 51000,
+			"slug": "fav_topics",
+			"type": "buble-select",
+			"question": {
+				"en": "What are your favorite topics?",
+				"fr": "",
+				"de": "",
+				"es": ""
+			},
+			"description": {
+				"en": "Choose up to 3 topics you like",
+				"fr": "",
+				"de": "",
+				"es": ""
+			},
+			"answers": [
+				{
+					"id": 510001,
+					"text": {
+						"en": "Werewolf",
+						"fr": "",
+						"de": "",
+						"es": ""
+					},
+					"img_URL": null,
+					"next": null
+				},
+				{
+					"id": 510002,
+					"text": {
+						"en": "Action",
+						"fr": "",
+						"de": "",
+						"es": ""
+					},
+					"img_URL": null,
+					"next": null
+				},
+				{
+					"id": 510003,
+					"text": {
+						"en": "Royal Obsession",
+						"fr": "",
+						"de": "",
+						"es": ""
+					},
+					"img_URL": null,
+					"next": null
+				}
+			],
+			"prev": 4000,
+			"children": null
+		}
+	]
+}
