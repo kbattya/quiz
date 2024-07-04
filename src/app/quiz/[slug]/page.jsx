@@ -5,12 +5,13 @@ import { questions } from '../../data.json';
 
 export default async function Quiz({ params }) {
 	const res = []
+	const length = 5
 
 	console.log(questions.find((item) => item.id == params.slug))
   return (
     <QuizeClient
 			question={questions.find((item) => item.id == params.slug)}
-			length={questions.length}
+			length={length}
 			res={res}
     />
   );

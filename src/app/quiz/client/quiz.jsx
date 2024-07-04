@@ -1,17 +1,20 @@
 'use client'
 
 import React, { useEffect } from "react";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
+import ProgressBar from "./styled-components/ProgressBar";
 
 export default function QuizeClient ({question, length, res}) {
+	const router = useRouter()
+
 	useEffect(() => {
 		console.log(question)
 	}, [])
 
 	return (
 		<>
-			{question.parent !== null && <Link href={question.parent.toString()}>Back</Link>}
-			<div>{res.length+1 + " / " + length}</div>
+			<ProgressBar length={length} current={res.length+1} back_href={question.parent?.toString() || question?.parent}/>
+
 			{question.type === 'single-select'
 				? <div>
 						<div className="title">{question.question['en']}</div>
@@ -19,7 +22,17 @@ export default function QuizeClient ({question, length, res}) {
 
 						<ul>
 							{question.answers.map((answer) => {
-								return <li key={answer.id}>{answer.text["en"]}</li>
+								return (
+									<li
+										key={answer.id}
+										onClick={() => {
+											router.push(`/${answer.next}`)
+										}}
+									>
+										{answer.text["en"]}
+									</li>
+
+								)
 							})}
 						</ul>
 					</div>
