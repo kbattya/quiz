@@ -63,7 +63,6 @@ const StyledLink = styled(Link).attrs(props => ({
   font-weight: bold;
   position: absolute;
   left: 4vw;
-    
 `;
 
 const ProgressBar = ({ length, current, back_href}) => {
