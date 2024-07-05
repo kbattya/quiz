@@ -4,10 +4,16 @@
 			"slug": "language",
 			"type": "single-select",
 			"question": {
-				"en": "What is your preferred language?"
+				"en": "What is your preferred language?",
+				"fr": "What is your preferred language?",
+				"de": "What is your preferred language?",
+				"es": "What is your preferred language?"
 			},
 			"description": {
-				"en": "Choose language"
+				"en": "Choose language",
+				"fr": "Choose language",
+				"de": "Choose language",
+				"es": "Choose language"
 			},
 			"answers": [
 				{
@@ -66,22 +72,22 @@
 				"en": "What gender do you identify with?",
 				"fr": "À quel genre vous identifiez-vous ?",
 				"de": "Mit welchem Geschlecht identifizierst du dich?",
-				"es": ""
+				"es": "¿Con qué género te identificas?"
 			},
 			"description": {
 				"en": "Please share how do you identify yourself",
 				"fr": "Veuillez partager comment vous vous identifiez.",
-				"de": "",
-				"es": ""
+				"de": "Bitte teilen Sie uns mit, wie Sie sich identifizieren",
+				"es": "Por favor comparte como te identificas"
 			},
 			"answers": [
 				{
 					"id": 201,
 					"text": {
 						"en": "Female",
-						"fr": "",
-						"de": "",
-						"es": ""
+						"fr": "Femelle",
+						"de": "Weiblich",
+						"es": "Femenina"
 					},
 					"img_URL": null,
 					"next": 300
@@ -90,9 +96,9 @@
 					"id": 202,
 					"text": {
 						"en": "Male",
-						"fr": "",
-						"de": "",
-						"es": ""
+						"fr": "Mâle",
+						"de": "Männlich",
+						"es": "Masculino"
 					},
 					"img_URL": null,
 					"next": 300
@@ -101,9 +107,9 @@
 					"id": 203,
 					"text": {
 						"en": "Other",
-						"fr": "",
-						"de": "",
-						"es": ""
+						"fr": "Autre",
+						"de": "Andere",
+						"es": "Otro"
 					},
 					"img_URL": null,
 					"next": 300
@@ -118,9 +124,9 @@
 			"type": "single-select",
 			"question": {
 				"en": "What is your age?",
-				"fr": "",
-				"de": "",
-				"es": ""
+				"fr": "Quel âge avez-vous?",
+				"de": "Wie alt bist Du?",
+				"es": "¿Cuál es tu edad?"
 			},
 			"description": {
 				"en": "",
@@ -133,9 +139,9 @@
 					"id": 3001,
 					"text": {
 						"en": "18-29 years",
-						"fr": "",
-						"de": "",
-						"es": ""
+						"fr": "18-29 ans",
+						"de": "18-29 jahre",
+						"es": "18-29 años"
 					},
 					"img_URL": null,
 					"next": 4000
@@ -144,9 +150,9 @@
 					"id": 3002,
 					"text": {
 						"en": "30-39 years",
-						"fr": "",
-						"de": "",
-						"es": ""
+						"fr": "30-39 ans",
+						"de": "30-39 jahre",
+						"es": "30-39 años"
 					},
 					"img_URL": null,
 					"next": 4000
@@ -155,9 +161,9 @@
 					"id": 3003,
 					"text": {
 						"en": "40-49 years",
-						"fr": "",
-						"de": "",
-						"es": ""
+						"fr": "40-49 ans",
+						"de": "40-49 jahre",
+						"es": "40-49 años"
 					},
 					"img_URL": null,
 					"next": 4000
@@ -166,9 +172,9 @@
 					"id": 3004,
 					"text": {
 						"en": "50+",
-						"fr": "",
-						"de": "",
-						"es": ""
+						"fr": "50+",
+						"de": "50+",
+						"es": "50+"
 					},
 					"img_URL": null,
 					"next": 4100
@@ -183,9 +189,9 @@
 			"type": "multiply-select",
 			"question": {
 				"en": "What do you hate the most in a book?",
-				"fr": "",
-				"de": "",
-				"es": ""
+				"fr": "Qu’est-ce que tu détestes le plus dans un livre ?",
+				"de": "Was hassen Sie an einem Buch am meisten?",
+				"es": "¿Qué es lo que más odias en un libro?"
 			},
 			"description": {
 				"en": "",
@@ -198,9 +204,9 @@
 					"id": 40001,
 					"text": {
 						"en": "Lack of logic",
-						"fr": "",
-						"de": "",
-						"es": ""
+						"fr": "Manque de logique",
+						"de": "Mangel an Logik",
+						"es": "Falta de logica"
 					},
 					"img_URL": null,
 					"next": 50000
@@ -209,9 +215,9 @@
 					"id": 40002,
 					"text": {
 						"en": "A slow speed",
-						"fr": "",
-						"de": "",
-						"es": ""
+						"fr": "Une vitesse lente",
+						"de": "Mit langsamer Geschwindigkeit",
+						"es": "A baja velocidad"
 					},
 					"img_URL": null,
 					"next": 50000
@@ -220,9 +226,9 @@
 					"id": 40003,
 					"text": {
 						"en": "Lack of humor",
-						"fr": "",
-						"de": "",
-						"es": ""
+						"fr": "Manque d'humour",
+						"de": "Mangel an Humor",
+						"es": "Falta de humor"
 					},
 					"img_URL": null,
 					"next": 50000
@@ -231,9 +237,9 @@
 					"id": 40004,
 					"text": {
 						"en": "Way too generic ending",
-						"fr": "",
-						"de": "",
-						"es": ""
+						"fr": "Une fin bien trop générique",
+						"de": "Viel zu allgemeines Ende",
+						"es": "Final demasiado genérico."
 					},
 					"img_URL": null,
 					"next": 50000
@@ -248,9 +254,9 @@
 			"type": "single-select",
 			"question": {
 				"en": "What do you hate the most in a book?",
-				"fr": "",
-				"de": "",
-				"es": ""
+				"fr": "Qu’est-ce que tu détestes le plus dans un livre ?",
+				"de": "Was hasst du an einem Buch am meisten?",
+				"es": "¿Qué es lo que más odias en un libro?"
 			},
 			"description": {
 				"en": "",
@@ -263,9 +269,9 @@
 					"id": 41001,
 					"text": {
 						"en": "Lack of logic",
-						"fr": "",
-						"de": "",
-						"es": ""
+						"fr": "Manque de logique",
+						"de": "Mangel an Logik",
+						"es": "Falta de logica"
 					},
 					"img_URL": null,
 					"next": 51000
@@ -274,9 +280,9 @@
 					"id": 41002,
 					"text": {
 						"en": "A slow speed",
-						"fr": "",
-						"de": "",
-						"es": ""
+						"fr": "Une vitesse lente",
+						"de": "Mit langsamer Geschwindigkeit",
+						"es": "A baja velocidad"
 					},
 					"img_URL": null,
 					"next": 51000
@@ -285,9 +291,9 @@
 					"id": 41003,
 					"text": {
 						"en": "Lack of humor",
-						"fr": "",
-						"de": "",
-						"es": ""
+						"fr": "Manque d'humour",
+						"de": "Mangel an Humor",
+						"es": "Falta de humor"
 					},
 					"img_URL": null,
 					"next": 51000
@@ -296,9 +302,9 @@
 					"id": 41004,
 					"text": {
 						"en": "Way too generic ending",
-						"fr": "",
-						"de": "",
-						"es": ""
+						"fr": "Une fin bien trop générique",
+						"de": "Viel zu allgemeines Ende",
+						"es": "Final demasiado genérico."
 					},
 					"img_URL": null,
 					"next": 51000
@@ -313,24 +319,24 @@
 			"type": "buble-select",
 			"question": {
 				"en": "What are your favorite topics?",
-				"fr": "",
-				"de": "",
-				"es": ""
+				"fr": "Quels sont vos sujets favoris ?",
+				"de": "Was sind Ihre Lieblingsthemen?",
+				"es": "¿Cuales son tus temas favoritos?"
 			},
 			"description": {
 				"en": "Choose up to 3 topics you like",
-				"fr": "",
-				"de": "",
-				"es": ""
+				"fr": "Choisissez jusqu'à 3 sujets que vous aimez",
+				"de": "Wählen Sie bis zu 3 Themen aus, die Ihnen gefallen",
+				"es": "Elige hasta 3 temas que te gusten"
 			},
 			"answers": [
 				{
 					"id": 500001,
 					"text": {
 						"en": "Werewolf",
-						"fr": "",
-						"de": "",
-						"es": ""
+						"fr": "Loup-garou",
+						"de": "Werwolf",
+						"es": "Hombre-lobo"
 					},
 					"img_URL": null,
 					"next": null
@@ -339,9 +345,9 @@
 					"id": 500002,
 					"text": {
 						"en": "Action",
-						"fr": "",
-						"de": "",
-						"es": ""
+						"fr": "Action",
+						"de": "Aktion",
+						"es": "Acción"
 					},
 					"img_URL": null,
 					"next": null
@@ -350,9 +356,9 @@
 					"id": 500003,
 					"text": {
 						"en": "Royal Obsession",
-						"fr": "",
-						"de": "",
-						"es": ""
+						"fr": "Obsession royale",
+						"de": "Königliche Besessenheit",
+						"es": "Obsesión real"
 					},
 					"img_URL": null,
 					"next": null
@@ -361,9 +367,9 @@
 					"id": 500004,
 					"text": {
 						"en": "Romance",
-						"fr": "",
-						"de": "",
-						"es": ""
+						"fr": "Romance",
+						"de": "Romantik",
+						"es": "Romance"
 					},
 					"img_URL": null,
 					"next": null
@@ -372,9 +378,9 @@
 					"id": 500005,
 					"text": {
 						"en": "Young Adult",
-						"fr": "",
-						"de": "",
-						"es": ""
+						"fr": "Jeune adulte",
+						"de": "Junge Erwachsene",
+						"es": "Adulta joven"
 					},
 					"img_URL": null,
 					"next": null
@@ -383,9 +389,9 @@
 					"id": 500006,
 					"text": {
 						"en": "Bad Boy",
-						"fr": "",
-						"de": "",
-						"es": ""
+						"fr": "Mauvais garçon",
+						"de": "Böser Bub",
+						"es": "Chico malo"
 					},
 					"img_URL": null,
 					"next": null
@@ -394,9 +400,9 @@
 					"id": 500007,
 					"text": {
 						"en": "Billionaire",
-						"fr": "",
-						"de": "",
-						"es": ""
+						"fr": "Milliardaire",
+						"de": "Milliardärin",
+						"es": "Multimillonario"
 					},
 					"img_URL": null,
 					"next": null
@@ -411,24 +417,24 @@
 			"type": "buble-select",
 			"question": {
 				"en": "What are your favorite topics?",
-				"fr": "",
-				"de": "",
-				"es": ""
+				"fr": "Quels sont vos sujets favoris ?",
+				"de": "Was sind Ihre Lieblingsthemen?",
+				"es": "¿Cuales son tus temas favoritos?"
 			},
 			"description": {
 				"en": "Choose up to 3 topics you like",
-				"fr": "",
-				"de": "",
-				"es": ""
+				"fr": "Choisissez jusqu'à 3 sujets que vous aimez",
+				"de": "Wählen Sie bis zu 3 Themen aus, die Ihnen gefallen",
+				"es": "Elige hasta 3 temas que te gusten"
 			},
 			"answers": [
 				{
 					"id": 510001,
 					"text": {
 						"en": "Werewolf",
-						"fr": "",
-						"de": "",
-						"es": ""
+						"fr": "Loup-garou",
+						"de": "Werwolf",
+						"es": "Hombre-lobo"
 					},
 					"img_URL": null,
 					"next": null
@@ -437,9 +443,9 @@
 					"id": 510002,
 					"text": {
 						"en": "Action",
-						"fr": "",
-						"de": "",
-						"es": ""
+						"fr": "Action",
+						"de": "Aktion",
+						"es": "Acción"
 					},
 					"img_URL": null,
 					"next": null
@@ -448,9 +454,9 @@
 					"id": 510003,
 					"text": {
 						"en": "Royal Obsession",
-						"fr": "",
-						"de": "",
-						"es": ""
+						"fr": "Obsession royale",
+						"de": "Königliche Besessenheit",
+						"es": "Obsesión real"
 					},
 					"img_URL": null,
 					"next": null

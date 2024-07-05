@@ -8,6 +8,7 @@ export default async function Quiz({ params }) {
 	const length = 5
 
 	console.log(questions.find((item) => item.id == params.slug))
+
   return (
     <QuizeClient
 			question={questions.find((item) => item.id == params.slug)}
