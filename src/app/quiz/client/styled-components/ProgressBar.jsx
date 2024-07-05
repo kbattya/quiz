@@ -56,7 +56,7 @@ const ProgressValue = styled.div.attrs(props => ({
 	font-weight: 800;
 `;
 
-const StyledLink = styled(Link).attrs(props => ({
+const StyledButton = styled.button.attrs(props => ({
 	$secondaryColor: props.$secondaryColor || '#E8EAF2',
 }))`
   color: ${props => props.$secondaryColor};
@@ -65,13 +65,13 @@ const StyledLink = styled(Link).attrs(props => ({
   left: 4vw;
 `;
 
-const ProgressBar = ({ length, current, back_href}) => {
+const ProgressBar = ({ length, current, isBackAvailable, onHandleClickBack}) => {
   return (
 		<div>	
 			<ProgressValue>
-				{back_href !== null && <StyledLink href={back_href}><ArrowLeft /></StyledLink>}
+				{isBackAvailable && <StyledButton onClick={onHandleClickBack}><ArrowLeft /></StyledButton>}
 
-				<CurrentValue>{current}</CurrentValue>
+				<CurrentValue>{current + 1}</CurrentValue>
 				<LengthValue>/</LengthValue>
 				<LengthValue>{length}</LengthValue>
 			</ProgressValue>

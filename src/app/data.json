@@ -25,7 +25,10 @@
 						"es": "English"
 					},
 					"img_URL": null,
-					"next": 20
+					"next": {
+						"id": 20,
+						"slug": "gender"
+					}
 				},
 				{
 					"id": 12,
@@ -36,7 +39,10 @@
 						"es": "French"
 					},
 					"img_URL": null,
-					"next": 20
+					"next": {
+						"id": 20,
+						"slug": "gender"
+					}
 				},
 				{
 					"id": 13,
@@ -47,7 +53,10 @@
 						"es": "German"
 					},
 					"img_URL": null,
-					"next": 20
+					"next": {
+						"id": 20,
+						"slug": "gender"
+					}
 				},
 				{
 					"id": 14,
@@ -58,7 +67,10 @@
 						"es": "Spanish"
 					},
 					"img_URL": null,
-					"next": 20
+					"next": {
+						"id": 20,
+						"slug": "gender"
+					}
 				}
 			],
 			"parent": null,
@@ -90,7 +102,10 @@
 						"es": "Femenina"
 					},
 					"img_URL": null,
-					"next": 300
+					"next": {
+						"id": 300,
+						"slug": "age"
+					}
 				},
 				{
 					"id": 202,
@@ -101,7 +116,10 @@
 						"es": "Masculino"
 					},
 					"img_URL": null,
-					"next": 300
+					"next": {
+						"id": 300,
+						"slug": "age"
+					}
 				},
 				{
 					"id": 203,
@@ -112,11 +130,17 @@
 						"es": "Otro"
 					},
 					"img_URL": null,
-					"next": 300
+					"next": {
+						"id": 300,
+						"slug": "age"
+					}
 				}
 			],
 			"children": [],
-			"parent": 1
+			"parent": {
+				"id": 1,
+				"slug": "language"
+			}
 		},
 		{
 			"id": 300,
@@ -144,7 +168,10 @@
 						"es": "18-29 años"
 					},
 					"img_URL": null,
-					"next": 4000
+					"next": {
+						"id": 4000,
+						"slug": "hate_book"
+					}
 				},
 				{
 					"id": 3002,
@@ -155,7 +182,10 @@
 						"es": "30-39 años"
 					},
 					"img_URL": null,
-					"next": 4000
+					"next": {
+						"id": 4000,
+						"slug": "hate_book"
+					}
 				},
 				{
 					"id": 3003,
@@ -166,7 +196,10 @@
 						"es": "40-49 años"
 					},
 					"img_URL": null,
-					"next": 4000
+					"next": {
+						"id": 4000,
+						"slug": "hate_book"
+					}
 				},
 				{
 					"id": 3004,
@@ -177,10 +210,16 @@
 						"es": "50+"
 					},
 					"img_URL": null,
-					"next": 4100
+					"next": {
+						"id": 4100,
+						"slug": "hate_book_1"
+					}
 				}
 			],
-			"parent": 20,
+			"parent": {
+				"id": 20,
+				"slug": "gender"
+			},
 			"children": []
 		},
 		{
@@ -209,7 +248,10 @@
 						"es": "Falta de logica"
 					},
 					"img_URL": null,
-					"next": 50000
+					"next": {
+						"id": 50000,
+						"slug": "fav_topics"
+					}
 				},
 				{
 					"id": 40002,
@@ -220,7 +262,10 @@
 						"es": "A baja velocidad"
 					},
 					"img_URL": null,
-					"next": 50000
+					"next": {
+						"id": 50000,
+						"slug": "fav_topics"
+					}
 				},
 				{
 					"id": 40003,
@@ -231,7 +276,10 @@
 						"es": "Falta de humor"
 					},
 					"img_URL": null,
-					"next": 50000
+					"next": {
+						"id": 50000,
+						"slug": "fav_topics"
+					}
 				},
 				{
 					"id": 40004,
@@ -242,16 +290,22 @@
 						"es": "Final demasiado genérico."
 					},
 					"img_URL": null,
-					"next": 50000
+					"next": {
+						"id": 50000,
+						"slug": "fav_topics"
+					}
 				}
 			],
-			"prev": 3000,
+			"parent": {
+				"id": 300,
+				"slug": "age"
+			},
 			"children": []
 		},
 		{
-			"id": 41000,
-			"slug": "age",
-			"type": "single-select",
+			"id": 4100,
+			"slug": "hate_book_1",
+			"type": "multiply-select",
 			"question": {
 				"en": "What do you hate the most in a book?",
 				"fr": "Qu’est-ce que tu détestes le plus dans un livre ?",
@@ -274,7 +328,10 @@
 						"es": "Falta de logica"
 					},
 					"img_URL": null,
-					"next": 51000
+					"next": {
+						"id": 51000,
+						"slug": "fav_topics_1"
+					}
 				},
 				{
 					"id": 41002,
@@ -285,7 +342,10 @@
 						"es": "A baja velocidad"
 					},
 					"img_URL": null,
-					"next": 51000
+					"next": {
+						"id": 51000,
+						"slug": "fav_topics_1"
+					}
 				},
 				{
 					"id": 41003,
@@ -296,7 +356,10 @@
 						"es": "Falta de humor"
 					},
 					"img_URL": null,
-					"next": 51000
+					"next": {
+						"id": 51000,
+						"slug": "fav_topics_1"
+					}
 				},
 				{
 					"id": 41004,
@@ -307,10 +370,16 @@
 						"es": "Final demasiado genérico."
 					},
 					"img_URL": null,
-					"next": 51000
+					"next": {
+						"id": 51000,
+						"slug": "fav_topics_1"
+					}
 				}
 			],
-			"parent": 3000,
+			"parent": {
+				"id": 300,
+				"slug": "age"
+			},
 			"children": []
 		},
 		{
@@ -408,12 +477,15 @@
 					"next": null
 				}
 			],
-			"prev": 4000,
+			"parent": {
+				"id": 4000,
+				"slug": "hate_book"
+			},
 			"children": null
 		},
 		{
 			"id": 51000,
-			"slug": "fav_topics",
+			"slug": "fav_topics_1",
 			"type": "buble-select",
 			"question": {
 				"en": "What are your favorite topics?",
@@ -462,7 +534,10 @@
 					"next": null
 				}
 			],
-			"prev": 4000,
+			"parent": {
+				"id": 4100,
+				"slug": "hate_book"
+			},
 			"children": null
 		}
 	]

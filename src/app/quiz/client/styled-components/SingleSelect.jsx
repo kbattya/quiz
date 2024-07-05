@@ -1,6 +1,6 @@
 'use client'
 
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 import ButtonLink from "./SelectedListItem";
@@ -20,7 +20,7 @@ function getNestedValue(obj, path) {
 }
 
 
-export default function SingleSelect ({isColumn, items, onHandleClick, value}) {
+export default function SingleSelect ({isColumn, items, onHandleClick, value, getActiveItemID}) {
 
 	return (
 		<StyledSelect $column={isColumn}>
