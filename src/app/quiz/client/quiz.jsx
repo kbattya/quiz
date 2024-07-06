@@ -9,6 +9,7 @@ import styled from "styled-components";
 
 import SingleSelect from "./styled-components/single-select/SingleSelect";
 import MultiSelect from "./styled-components/multi-select/MultiSelect";
+import BubbleSelect from "./styled-components/bubble-select/BubbleSelect";
 
 const StyledQuiz = styled.div.attrs(props => ({
 	// $pimaryColor: props.$pimaryColor || '#F2F3F5',
@@ -111,7 +112,13 @@ export default function QuizeClient ({question, length, res}) {
 								value={`text.${selectedLanguage}`}
 								onHandleNext={onHandleNext}
 							/>
-						: <></>
+						: question.type === 'bubble-select'
+							? <BubbleSelect
+									items={question.answers}
+									value={`text.${selectedLanguage}`}
+									onHandleNext={onHandleNext}
+								/>
+							: <></>
 				}
 			</StyledQuiz>
 	

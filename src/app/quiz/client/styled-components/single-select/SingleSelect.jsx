@@ -3,6 +3,8 @@
 import React from "react";
 import styled from "styled-components";
 
+import Image from "next/image";
+
 const StyledSelect = styled.div.attrs(props => ({
 	$column: props.$column || false,
 }))`
@@ -42,7 +44,16 @@ export default function SingleSelect ({ isColumn, items, onHandleClick, value })
 					<StyledButton
 						key={item.id || index}
 						onClick={() => onHandleClick(item)}
-					>
+					>	
+						{item?.img_URL && 
+							<Image
+								src={item?.img_URL}
+								height={52}
+								width={52}
+								quality={100} 
+								alt={value}
+							/>
+						}
 						{getNestedValue(item, value)}
 					</StyledButton>
 				)

@@ -101,7 +101,7 @@
 						"de": "Weiblich",
 						"es": "Femenina"
 					},
-					"img_URL": null,
+					"img_URL": "/img/Woman_Emoji_Icon.webp",
 					"next": {
 						"id": 300,
 						"slug": "age"
@@ -115,7 +115,7 @@
 						"de": "Männlich",
 						"es": "Masculino"
 					},
-					"img_URL": null,
+					"img_URL": "/img/Man_Emoji_Icon.webp",
 					"next": {
 						"id": 300,
 						"slug": "age"
@@ -129,7 +129,7 @@
 						"de": "Andere",
 						"es": "Otro"
 					},
-					"img_URL": null,
+					"img_URL": "/img/Wink_Emoji_Icon.webp",
 					"next": {
 						"id": 300,
 						"slug": "age"
@@ -385,7 +385,7 @@
 		{
 			"id": 50000,
 			"slug": "fav_topics",
-			"type": "buble-select",
+			"type": "bubble-select",
 			"question": {
 				"en": "What are your favorite topics?",
 				"fr": "Quels sont vos sujets favoris ?",
@@ -407,7 +407,7 @@
 						"de": "Werwolf",
 						"es": "Hombre-lobo"
 					},
-					"img_URL": null,
+					"img_URL": "/img/wolf.svg",
 					"next": null
 				},
 				{
@@ -418,7 +418,7 @@
 						"de": "Aktion",
 						"es": "Acción"
 					},
-					"img_URL": null,
+					"img_URL": "/img/dancing.svg",
 					"next": null
 				},
 				{
@@ -429,7 +429,7 @@
 						"de": "Königliche Besessenheit",
 						"es": "Obsesión real"
 					},
-					"img_URL": null,
+					"img_URL": "/img/queen.svg",
 					"next": null
 				},
 				{
@@ -440,7 +440,7 @@
 						"de": "Romantik",
 						"es": "Romance"
 					},
-					"img_URL": null,
+					"img_URL": "/img/love.svg",
 					"next": null
 				},
 				{
@@ -451,7 +451,7 @@
 						"de": "Junge Erwachsene",
 						"es": "Adulta joven"
 					},
-					"img_URL": null,
+					"img_URL": "/img/adult.svg",
 					"next": null
 				},
 				{
@@ -462,7 +462,7 @@
 						"de": "Böser Bub",
 						"es": "Chico malo"
 					},
-					"img_URL": null,
+					"img_URL": "/img/bad_boy.svg",
 					"next": null
 				},
 				{
@@ -473,7 +473,7 @@
 						"de": "Milliardärin",
 						"es": "Multimillonario"
 					},
-					"img_URL": null,
+					"img_URL": "/img/money.svg",
 					"next": null
 				}
 			],
@@ -486,7 +486,7 @@
 		{
 			"id": 51000,
 			"slug": "fav_topics_1",
-			"type": "buble-select",
+			"type": "bubble-select",
 			"question": {
 				"en": "What are your favorite topics?",
 				"fr": "Quels sont vos sujets favoris ?",
@@ -508,7 +508,7 @@
 						"de": "Werwolf",
 						"es": "Hombre-lobo"
 					},
-					"img_URL": null,
+					"img_URL": "/img/wolf.svg",
 					"next": null
 				},
 				{
@@ -519,7 +519,7 @@
 						"de": "Aktion",
 						"es": "Acción"
 					},
-					"img_URL": null,
+					"img_URL": "/img/dancing.svg",
 					"next": null
 				},
 				{
@@ -530,7 +530,7 @@
 						"de": "Königliche Besessenheit",
 						"es": "Obsesión real"
 					},
-					"img_URL": null,
+					"img_URL": "/img/queen.svg",
 					"next": null
 				}
 			],

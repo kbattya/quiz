@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Checkbox from "./Checkbox";
+import PrimaryButton from "../buttons/PrimaryButton";
 
 const StyledSelect = styled.div.attrs(props => ({
 	// $column: props.$column || false,
@@ -14,21 +15,7 @@ const StyledSelect = styled.div.attrs(props => ({
 	gap: 12px;
 `;
 
-const PimaryButton = styled.button.attrs(props => ({
-	$secondaryColor: props.$secondaryColor || '#E8EAF2',
-	$primaryColor: props.$primaryColor || '#E4229C',
-}))`
-  color: ${props => props.$secondaryColor};
-	background-color: ${props => props.$primaryColor};
-	padding: 21px 20px;
-	width: 100%;
-	margin-top: 20px;
-	border-radius: 30px;
 
-	&:disabled {
-		opacity: 0.4
-	}
-`;
 
 
 function getNestedValue(obj, path) {
@@ -54,12 +41,12 @@ export default function MultiSelect ({items, value, onHandleNext}) {
 				)
 			})}
 
-			<PimaryButton
+			<PrimaryButton
 				disabled={selectedItems.length === 0}
-				onClick={() => onHandleNext(selectedItems)}
+				onHandleClick={() => onHandleNext(selectedItems)}
 				>
 					Next
-			</PimaryButton>
+			</PrimaryButton>
 		</StyledSelect>
 	)
 }
