@@ -8,7 +8,8 @@ const StyledButton = styled.button.attrs(props => ({
   color: ${props => props.$color};
 	background-color: ${props => props.$backgroundColor};
 	padding: 12px 20px;
-	border-radius: 6px;
+	border-radius: 16px;
+	width: 100%;
   font-size: 17px;
 	line-height: 24px;
 	margin-bottom: 12px;

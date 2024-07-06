@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import { ArrowLeft } from '@/app/icons';
 
-const LinearProgress = styled.div.attrs(props => ({
+const StyledLinearProgress = styled.div.attrs(props => ({
   $progress: props.$progress,
 	$pimaryColor: props.$pimaryColor || '#E4229C',
 	$secondaryColor: props.$secondaryColor || '#E8EAF2',
@@ -65,7 +65,7 @@ const StyledButton = styled.button.attrs(props => ({
   left: 4vw;
 `;
 
-const ProgressBar = ({ length, current, isBackAvailable, onHandleClickBack}) => {
+const LinearProgress = ({ length, current, isBackAvailable, onHandleClickBack}) => {
   return (
 		<div>	
 			<ProgressValue>
@@ -75,9 +75,9 @@ const ProgressBar = ({ length, current, isBackAvailable, onHandleClickBack}) => 
 				<LengthValue>/</LengthValue>
 				<LengthValue>{length}</LengthValue>
 			</ProgressValue>
-			<LinearProgress $progress={current/length} />
+			<StyledLinearProgress $progress={current/length} />
 		</div>
 	)
 };
 
-export default ProgressBar;
+export default LinearProgress;

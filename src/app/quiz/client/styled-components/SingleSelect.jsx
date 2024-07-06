@@ -13,6 +13,8 @@ const StyledSelect = styled.div.attrs(props => ({
 	justify-content: center;
 	align-items: center;
 	gap: 12px;
+	width: 100%;
+	max-width: 400px
 `;
 
 function getNestedValue(obj, path) {

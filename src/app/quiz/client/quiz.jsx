@@ -2,13 +2,14 @@
 
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import ProgressBar from "./styled-components/ProgressBar";
+import LinearProgress from "./styled-components/LinearProgress";
 import Title from "./styled-components/Title";
 import Description from "./styled-components/Description";
 import styled from "styled-components";
 
 import ButtonLink from "./styled-components/SelectedListItem";
 import SingleSelect from "./styled-components/SingleSelect";
+import MultiSelect from "./styled-components/MultiSelect";
 
 const StyledQuiz = styled.div.attrs(props => ({
 	// $pimaryColor: props.$pimaryColor || '#F2F3F5',
@@ -17,6 +18,7 @@ const StyledQuiz = styled.div.attrs(props => ({
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	padding: 20px;
 	padding-top: 40px;
 	gap: 30px;
 `;
@@ -64,9 +66,23 @@ export default function QuizeClient ({question, length, res}) {
 		router.push(`/quiz/${answer.next.slug}`)
 	}
 
+	const onHandleNext = (selectedItemsID) => {
+		let selectedAnswers = question.answers.filter((answer) => selectedItemsID.includes(answer.id))
+		let res 
+		if (result.some((res) => res.question.id === question.id)) {
+			res = result.map((res) => res.question.id === question.id ? { question, answers: selectedAnswers} : res)
+		} else {
+			res = [...result, { question, answers: selectedAnswers}]
+		}
+
+		localStorage.setItem("quiz_results", JSON.stringify(res))
+		setResult(res)
+		router.push(`/quiz/${selectedAnswers[0].next.slug}`)
+	}
+
 	return (
 		<>
-			<ProgressBar
+			<LinearProgress
 				length={length}
 				current={result.length}
 				isBackAvailable={question.parent !== null}
@@ -79,20 +95,27 @@ export default function QuizeClient ({question, length, res}) {
 				}}
 			/>
 
-			{question.type === 'single-select'
-				? <StyledQuiz>
-						<Title text={question.question[selectedLanguage]}/>
-						<Description text={question.description[selectedLanguage]} />
+			<StyledQuiz>
+				<Title text={question.question[selectedLanguage]}/>
+				<Description text={question.description[selectedLanguage]} />
 
-						<SingleSelect
+				{question.type === 'single-select'
+					? <SingleSelect
 							isColumn={question.answers.length > 3}
 							items={question.answers}
 							onHandleClick={(answer) => onHandleSelect(answer)}
 							value={`text.${selectedLanguage}`}
 						/>
-					</StyledQuiz>
-				: <></>
-			}
+					: question.type === 'multiply-select'
+						? <MultiSelect
+								items={question.answers}
+								value={`text.${selectedLanguage}`}
+								onHandleNext={onHandleNext}
+							/>
+						: <></>
+				}
+			</StyledQuiz>
+	
 		</>
 	)
 }
