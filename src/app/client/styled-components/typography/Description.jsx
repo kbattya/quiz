@@ -13,8 +13,8 @@ const StyledDescription = styled.p.attrs(props => ({
 	text-align: center;
 `;
 
-const Description = ({ text }) => {
-  return <StyledDescription>{text}</StyledDescription>
+const Description = ({ children }) => {
+  return <StyledDescription>{children}</StyledDescription>
 };
 
 export default Description;

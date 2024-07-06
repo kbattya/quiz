@@ -1,5 +1,5 @@
 export const revalidate = 60;
-import QuizeClient from "../client/quiz";
+import QuizeClient from "../../client/quiz";
 
 import { questions } from '../../data.json';
 

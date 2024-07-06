@@ -81,7 +81,7 @@ export default function BubbleSelect ({ isColumn, items, onHandleSubmit, value }
 			<PrimaryButton
 				disabled={selectedItems.length === 0}
 				onHandleClick={() => onHandleSubmit(selectedItems)}
-				>
+			>
 				Next
 			</PrimaryButton>
 		</>

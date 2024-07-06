@@ -28,7 +28,6 @@ const StyledButton = styled.button.attrs(props => ({
 	width: 100%;
   font-size: 17px;
 	line-height: 24px;
-	margin-bottom: 12px;
 `;
 
 function getNestedValue(obj, path) {

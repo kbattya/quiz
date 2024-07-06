@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import LinearProgress from "./styled-components/LinearProgress";
+import LinearProgress from "./styled-components/progress-bars/LinearProgress";
 import Title from "./styled-components/typography/Title";
 import Description from "./styled-components/typography/Description";
 import styled from "styled-components";
@@ -10,6 +10,7 @@ import styled from "styled-components";
 import SingleSelect from "./styled-components/single-select/SingleSelect";
 import MultiSelect from "./styled-components/multi-select/MultiSelect";
 import BubbleSelect from "./styled-components/bubble-select/BubbleSelect";
+import CircularProgress from "./styled-components/progress-bars/CircularProgress";
 
 const StyledQuiz = styled.div.attrs(props => ({
 	// $pimaryColor: props.$pimaryColor || '#F2F3F5',
@@ -20,13 +21,16 @@ const StyledQuiz = styled.div.attrs(props => ({
 	align-items: center;
 	padding: 20px;
 	padding-top: 40px;
-	gap: 30px;
+	gap: 12px;
 `;
 
-export default function QuizeClient ({question, length, res}) {
+export default function QuizeClient ({question, length}) {
 	const router = useRouter()
 	const [result, setResult] = useState([])
 	const [selectedLanguage, setSelectedLanguage] = useState()
+	const [isFormSubmited, setIsFormSubmited] = useState(false)
+	const [isLoading, setIsLoading] = useState(false)
+	const [loadingProgress, setLoadingProgress] = useState(0)
 
 	useEffect(() => {
 		let res = localStorage.getItem("quiz_results")
@@ -91,52 +95,71 @@ export default function QuizeClient ({question, length, res}) {
 	}
 
 	function onStartLoading() {
-		console.log('loading')
+		setIsFormSubmited(true)
+		setIsLoading(true)
+
+		const intervalId = setInterval(() => {
+			setLoadingProgress((prev) => prev + 1);
+		}, 50);
+
+		setTimeout(() => {
+			clearInterval(intervalId);
+
+			setTimeout(() => {
+				// setIsLoading(false)
+			}, 300)
+		}, 5000);
 	}
 
 	return (
 		<>
-			<LinearProgress
-				length={length}
-				current={result.length}
-				isBackAvailable={question.parent !== null}
-				onHandleClickBack={() => {
-					let slug = question.parent?.slug
-					let upd = result.filter((res) => res.question.id !== question.parent.id)
-					setResult(upd)
-					localStorage.setItem("quiz_results", JSON.stringify(upd))
+			{isFormSubmited
+				? isLoading
+					? <CircularProgress loadingProgress={loadingProgress} />
+					: <div style={{color: 'white'}}>Loaded</div>
+				: <>
+						<LinearProgress
+							length={length}
+							current={result.length}
+							isBackAvailable={question.parent !== null}
+							onHandleClickBack={() => {
+								let slug = question.parent?.slug
+								let upd = result.filter((res) => res.question.id !== question.parent.id)
+								setResult(upd)
+								localStorage.setItem("quiz_results", JSON.stringify(upd))
 
-					router.push(`/quiz/${slug}`)
-				}}
-			/>
-
-			<StyledQuiz>
-				<Title text={question.question[selectedLanguage]}/>
-				<Description text={question.description[selectedLanguage]} />
-
-				{question.type === 'single-select'
-					? <SingleSelect
-							isColumn={question.answers.length > 3}
-							items={question.answers}
-							onHandleClick={(answer) => onHandleSelect(answer)}
-							value={`text.${selectedLanguage}`}
+								router.push(`/quiz/${slug}`)
+							}}
 						/>
-					: question.type === 'multiply-select'
-						? <MultiSelect
-								items={question.answers}
-								value={`text.${selectedLanguage}`}
-								onHandleSubmit={onHandleSubmit}
-							/>
-						: question.type === 'bubble-select'
-							? <BubbleSelect
-									items={question.answers}
-									value={`text.${selectedLanguage}`}
-									onHandleSubmit={onHandleSubmit}
-								/>
-							: <></>
-				}
-			</StyledQuiz>
-	
+
+						<StyledQuiz>
+							<Title>{question.question[selectedLanguage]}</Title>
+							<Description>{question.description[selectedLanguage]}</Description>
+
+							{question.type === 'single-select'
+								? <SingleSelect
+										isColumn={question.answers.length > 3}
+										items={question.answers}
+										onHandleClick={(answer) => onHandleSelect(answer)}
+										value={`text.${selectedLanguage}`}
+									/>
+								: question.type === 'multiply-select'
+									? <MultiSelect
+											items={question.answers}
+											value={`text.${selectedLanguage}`}
+											onHandleSubmit={onHandleSubmit}
+										/>
+									: question.type === 'bubble-select'
+										? <BubbleSelect
+												items={question.answers}
+												value={`text.${selectedLanguage}`}
+												onHandleSubmit={onHandleSubmit}
+											/>
+										: <></>
+							}
+						</StyledQuiz>
+					</>	
+			}
 		</>
 	)
 }

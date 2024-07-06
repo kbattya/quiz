@@ -11,8 +11,8 @@ const StyledTitle = styled.h2.attrs(props => ({
 	text-align: center;
 `;
 
-const Title = ({ text }) => {
-  return <StyledTitle>{text}</StyledTitle>
+const Title = ({ children }) => {
+  return <StyledTitle>{children}</StyledTitle>
 };
 
 export default Title;

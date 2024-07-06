@@ -34,9 +34,19 @@ button, input[type="submit"], input[type="reset"] {
 
 body {
 	background-color: rgb(28, 3, 41);
+	min-height: 100vh;
 }
 
 ul {
 	display: flex;
+	flex-direction: column;
+}
+
+.loading_page {
+	min-height: 85vh;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	flex-direction: column;
 }
