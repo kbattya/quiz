@@ -3,13 +3,12 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import LinearProgress from "./styled-components/LinearProgress";
-import Title from "./styled-components/Title";
-import Description from "./styled-components/Description";
+import Title from "./styled-components/typography/Title";
+import Description from "./styled-components/typography/Description";
 import styled from "styled-components";
 
-import ButtonLink from "./styled-components/SelectedListItem";
-import SingleSelect from "./styled-components/SingleSelect";
-import MultiSelect from "./styled-components/MultiSelect";
+import SingleSelect from "./styled-components/single-select/SingleSelect";
+import MultiSelect from "./styled-components/multi-select/MultiSelect";
 
 const StyledQuiz = styled.div.attrs(props => ({
 	// $pimaryColor: props.$pimaryColor || '#F2F3F5',

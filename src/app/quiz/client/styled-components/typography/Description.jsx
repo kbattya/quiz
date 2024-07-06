@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledDescription = styled.h2.attrs(props => ({
+const StyledDescription = styled.p.attrs(props => ({
 	$pimaryColor: props.$pimaryColor || '#C4C8CC',
 }))`
   color: ${props => props.$pimaryColor};
