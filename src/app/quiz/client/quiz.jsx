@@ -63,10 +63,15 @@ export default function QuizeClient ({question, length, res}) {
 
 		localStorage.setItem("quiz_results", JSON.stringify(res))
 		setResult(res)
-		router.push(`/quiz/${answer.next.slug}`)
+		
+ 		if (answer.next) {
+			router.push(`/quiz/${answer.next.slug}`)
+		} else {
+			onStartLoading()
+		}
 	}
 
-	const onHandleNext = (selectedItemsID) => {
+	const onHandleSubmit = (selectedItemsID) => {
 		let selectedAnswers = question.answers.filter((answer) => selectedItemsID.includes(answer.id))
 		let res 
 		if (result.some((res) => res.question.id === question.id)) {
@@ -77,7 +82,16 @@ export default function QuizeClient ({question, length, res}) {
 
 		localStorage.setItem("quiz_results", JSON.stringify(res))
 		setResult(res)
-		router.push(`/quiz/${selectedAnswers[0].next.slug}`)
+
+		if(selectedAnswers[0].next) {
+			router.push(`/quiz/${selectedAnswers[0].next.slug}`)
+		} else {
+			onStartLoading()
+		}
+	}
+
+	function onStartLoading() {
+		console.log('loading')
 	}
 
 	return (
@@ -91,6 +105,7 @@ export default function QuizeClient ({question, length, res}) {
 					let upd = result.filter((res) => res.question.id !== question.parent.id)
 					setResult(upd)
 					localStorage.setItem("quiz_results", JSON.stringify(upd))
+
 					router.push(`/quiz/${slug}`)
 				}}
 			/>
@@ -110,13 +125,13 @@ export default function QuizeClient ({question, length, res}) {
 						? <MultiSelect
 								items={question.answers}
 								value={`text.${selectedLanguage}`}
-								onHandleNext={onHandleNext}
+								onHandleSubmit={onHandleSubmit}
 							/>
 						: question.type === 'bubble-select'
 							? <BubbleSelect
 									items={question.answers}
 									value={`text.${selectedLanguage}`}
-									onHandleNext={onHandleNext}
+									onHandleSubmit={onHandleSubmit}
 								/>
 							: <></>
 				}

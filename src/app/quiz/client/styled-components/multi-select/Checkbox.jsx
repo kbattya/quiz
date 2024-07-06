@@ -62,7 +62,7 @@ export default function Checkbox ({
 			onClick={(e) => {e.stopPropagation(); setIsChecked(!isChecked)}}
 			$active={selectedItems.includes(id)}
 		>
-			<label htmlForfor={html_id}>{value}</label>
+			<label htmlFor={html_id}>{value}</label>
 			<StyledCheckboxInput
 				type="checkbox"
 				id={html_id}

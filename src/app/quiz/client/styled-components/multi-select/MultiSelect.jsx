@@ -22,7 +22,7 @@ function getNestedValue(obj, path) {
   return path.split('.').reduce((acc, part) => acc && acc[part], obj);
 }
 
-export default function MultiSelect ({items, value, onHandleNext}) {
+export default function MultiSelect ({items, value, onHandleSubmit}) {
 	const [selectedItems, setSelectedItems] = useState([])
 
 	return (
@@ -43,7 +43,7 @@ export default function MultiSelect ({items, value, onHandleNext}) {
 
 			<PrimaryButton
 				disabled={selectedItems.length === 0}
-				onHandleClick={() => onHandleNext(selectedItems)}
+				onHandleClick={() => onHandleSubmit(selectedItems)}
 				>
 					Next
 			</PrimaryButton>
