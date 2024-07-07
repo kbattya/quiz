@@ -14,7 +14,8 @@ const StyledSelect = styled.div.attrs(props => ({
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	max-width: 400px
+	max-width: 400px;
+	gap: 12px
 `;
 
 const StyledButton = styled.button.attrs(props => ({
@@ -37,6 +38,7 @@ const StyledButton = styled.button.attrs(props => ({
 	justify-content: center;
 	align-items: center;
 	gap: 6px;
+	margin: 2px auto;
 `;
 
 function getNestedValue(obj, path) {

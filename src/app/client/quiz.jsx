@@ -106,17 +106,41 @@ export default function QuizeClient ({question, length}) {
 			clearInterval(intervalId);
 
 			setTimeout(() => {
-				// setIsLoading(false)
+				setIsLoading(false)
+				router.push(`/email`)
 			}, 300)
 		}, 5000);
 	}
 
+	function renderSelect(type) {
+		switch(type) {
+			case 'single-select':
+				return <SingleSelect
+									isColumn={question.answers.length > 3}
+									items={question.answers}
+									onHandleClick={(answer) => onHandleSelect(answer)}
+									value={`text.${selectedLanguage}`}
+								/>;
+			case 'multiply-select':
+				return <MultiSelect
+								items={question.answers}
+								value={`text.${selectedLanguage}`}
+								onHandleSubmit={onHandleSubmit}
+							/>
+			case 'bubble-select':
+				return <BubbleSelect
+								items={question.answers}
+								value={`text.${selectedLanguage}`}
+								onHandleSubmit={onHandleSubmit}
+							/>
+		}
+	}
+	
+
 	return (
 		<>
 			{isFormSubmited
-				? isLoading
-					? <CircularProgress loadingProgress={loadingProgress} />
-					: <div style={{color: 'white'}}>Loaded</div>
+				? isLoading && <CircularProgress loadingProgress={loadingProgress} />
 				: <>
 						<LinearProgress
 							length={length}
@@ -136,27 +160,7 @@ export default function QuizeClient ({question, length}) {
 							<Title>{question.question[selectedLanguage]}</Title>
 							<Description>{question.description[selectedLanguage]}</Description>
 
-							{question.type === 'single-select'
-								? <SingleSelect
-										isColumn={question.answers.length > 3}
-										items={question.answers}
-										onHandleClick={(answer) => onHandleSelect(answer)}
-										value={`text.${selectedLanguage}`}
-									/>
-								: question.type === 'multiply-select'
-									? <MultiSelect
-											items={question.answers}
-											value={`text.${selectedLanguage}`}
-											onHandleSubmit={onHandleSubmit}
-										/>
-									: question.type === 'bubble-select'
-										? <BubbleSelect
-												items={question.answers}
-												value={`text.${selectedLanguage}`}
-												onHandleSubmit={onHandleSubmit}
-											/>
-										: <></>
-							}
+							{renderSelect(question.type)}
 						</StyledQuiz>
 					</>	
 			}

@@ -30,7 +30,7 @@ const Container = styled.div.attrs(props => ({
 }))`
   display: flex;
   width: 420px;
-  padding: 50px 0;
+  padding-bottom: 30px;
   border-radius: 12px;
   row-gap: 30px;
   flex-direction: column;
@@ -47,7 +47,7 @@ const ProgressValue = styled.div.attrs(props => ({
 
 const CircularProgress = ({ loadingProgress }) => {
   return (
-		<div className='loading_page'>
+		<div className="page_container">
 			<Container>
           <StyledProgress $progress={loadingProgress}>
             <ProgressValue >{loadingProgress}%</ProgressValue>
