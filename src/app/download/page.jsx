@@ -9,6 +9,8 @@ import { useRouter } from "next/navigation";
 import { Niconne } from "next/font/google";
 import SecondaryButton from "../client/styled-components/buttons/SecondaryButton";
 
+import { generateFile } from "../helpers/helpers";
+
 const niconne = Niconne({ subsets: ['latin'], weight: ['400']});
 
 export default function EmailClient () {
@@ -37,8 +39,6 @@ export default function EmailClient () {
 		
 	}, [])
 
-
-
 	return (
 		<div className="page_container">
 			<div className={niconne.className}><Title size="36px">Thank you</Title></div>
@@ -46,6 +46,7 @@ export default function EmailClient () {
 
 			<div style={{padding: '40px 10px'}}>
 				<Image
+					priority={1}
 					src={"./img/checkmark.svg"}
 					height={118}
 					width={118}
@@ -55,7 +56,7 @@ export default function EmailClient () {
 			</div>
 
 			<div style={{marginTop: 'auto', width: '100%', display: 'flex', flexDirection:'column', alignItems:'center', justifyContent: 'center'}}>
-				<SecondaryButton>
+				<SecondaryButton onHandleClick={() => generateFile(result, selectedLanguage)}>
 					<Image
 						src={"./img/download.svg"}
 						height={42}

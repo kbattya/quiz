@@ -14,9 +14,9 @@ const StyledButton = styled.button.attrs(props => ({
 	gap: 8px;
 `;
 
-export default function SecondaryButton ({children, primaryColor}) {
+export default function SecondaryButton ({children, primaryColor, onHandleClick}) {
 	return (
-		<StyledButton $primaryColor={primaryColor}>
+		<StyledButton $primaryColor={primaryColor} onClick={onHandleClick}>
 			{children}
 		</StyledButton>
 	)
