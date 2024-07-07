@@ -13,6 +13,7 @@ const StyledButton = styled.button.attrs(props => ({
 	width: 100%;
 	margin-top: 20px;
 	border-radius: 30px;
+	max-width: 450px;
 
 	&:disabled {
 		opacity: 0.4

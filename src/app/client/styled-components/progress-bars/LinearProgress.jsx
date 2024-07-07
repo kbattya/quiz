@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ArrowLeft } from '@/app/icons';
+import { ArrowLeft } from '../../../icons';
 
 const StyledLinearProgress = styled.div.attrs(props => ({
   $progress: props.$progress,

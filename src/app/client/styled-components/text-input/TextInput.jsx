@@ -47,6 +47,7 @@ const InputWrapper = styled.div.attrs(props => ({
 	flex-direction: column;
 	align-items: flex-start;
 	width: 100%;
+	max-width: 450px;
 `;
 
 

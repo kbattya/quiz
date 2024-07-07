@@ -55,12 +55,15 @@ ul {
 } */
 
 .page_container {
-	min-height: 100vh;
+	height: 100vh;
+	max-height: 600px;
+
 	width: 100vw;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	padding: 20px;
+	padding-top: 50px;
 	gap: 12px;
 }

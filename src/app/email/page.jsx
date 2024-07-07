@@ -7,39 +7,16 @@ import Link from "next/link";
 import * as EmailValidator from 'email-validator';
 import PrimaryButton from "../client/styled-components/buttons/PrimaryButton";
 import TextInput from "../client/styled-components/text-input/TextInput";
+import { useRouter } from "next/navigation";
 
-export default function EmailClient ({question, length}) {
-	// const router = useRouter()
-	// const [result, setResult] = useState([])
-	// const [selectedLanguage, setSelectedLanguage] = useState()
+export default function EmailClient () {
+	const router = useRouter()
 	const [email, setEmail] = useState('')
 	const [isEmailValid, setIsEmailValid] = useState(true)
 
 	useEffect(() => {
 		setIsEmailValid(EmailValidator.validate(email))
 	}, [email])
-
-	useEffect(() => {
-		// let res = localStorage.getItem("quiz_results")
-		// if (res !== null) {
-		// 	setResult(JSON.parse(res))
-		// }
-
-		// if (localStorage.getItem("quiz_selected_lang")) {
-		// 	let lang = JSON.parse(localStorage.getItem("quiz_selected_lang")).toLocaleLowerCase()
-	
-		// 	switch (lang) {
-		// 		case "german": setSelectedLanguage('de'); return
-		// 		case "french": setSelectedLanguage('fr'); return
-		// 		case "english": setSelectedLanguage('en'); return
-		// 		case "spanish": setSelectedLanguage('es'); return
-		// 	}
-		// } else {
-		// 	setSelectedLanguage('en')
-		// }
-		
-	}, [])
-
 
 	return (
 		<div className="page_container">
@@ -63,12 +40,12 @@ export default function EmailClient ({question, length}) {
 			
 			<PrimaryButton
 				disabled={email.trim().length === 0 || !isEmailValid}
-				onHandleClick={() => {					
+				onHandleClick={() => {	
+					router.push(`/download`);
 				}}
 			>
 				Next
 			</PrimaryButton>	
-			
 		</div>
 	)
 }
