@@ -35,7 +35,7 @@ const StyledCheckboxInput = styled.input.attrs(props => ({
   -webkit-transform: scale(1.7);
   -o-transform: scale(1.7);
   transform: scale(1.7);
-
+	cursor: pointer;
 	accent-color: ${props => props.$backgroundColor};
 `;
 
@@ -43,11 +43,10 @@ export default function Checkbox ({
 	value,
 	html_id,
 	id,
-	checked,
 	setSelectedItems,
 	selectedItems
 }) {
-	const [isChecked, setIsChecked] = useState(checked)
+	const [isChecked, setIsChecked] = useState(selectedItems.includes(id));
 
 	useEffect(() => {
 		if (isChecked) {
@@ -57,19 +56,26 @@ export default function Checkbox ({
 		}
 	}, [isChecked])
 
+  const handleCheckboxChange = (e) => {
+    setIsChecked(e.target.checked);
+  };
+
 	return (
 		<StyledCheckboxButton
-			onClick={(e) => {e.stopPropagation(); setIsChecked(!isChecked)}}
+			onClick={(e) => {
+				e.stopPropagation();
+				setIsChecked(!isChecked);
+			}}
 			$active={selectedItems.includes(id)}
 		>
-			<label htmlFor={html_id}>{value}</label>
+			<label htmlFor={html_id} style={{textAlign: "start"}}>
+				{value}
+			</label>
 			<StyledCheckboxInput
 				type="checkbox"
 				id={html_id}
-				name=""
 				checked={isChecked}
-				onClick={(e) => {e.stopPropagation(); setIsChecked(!isChecked)}}
-				style={{cursor: 'pointer'}}
+				onChange={handleCheckboxChange}
 			/>
 		</StyledCheckboxButton>
 	)

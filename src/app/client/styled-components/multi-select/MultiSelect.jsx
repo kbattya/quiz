@@ -5,9 +5,7 @@ import styled from "styled-components";
 import Checkbox from "./Checkbox";
 import PrimaryButton from "../buttons/PrimaryButton";
 
-const StyledSelect = styled.div.attrs(props => ({
-	// $column: props.$column || false,
-}))`
+const StyledSelect = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -33,7 +31,6 @@ export default function MultiSelect ({items, value, onHandleSubmit}) {
 							id={item.id}
 							value={getNestedValue(item, value)}
 							setSelectedItems={setSelectedItems}
-							items={items}
 							selectedItems={selectedItems}
 						/>
 					)

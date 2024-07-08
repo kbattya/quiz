@@ -5,24 +5,11 @@ import { useRouter } from "next/navigation";
 import LinearProgress from "./styled-components/progress-bars/LinearProgress";
 import Title from "./styled-components/typography/Title";
 import Description from "./styled-components/typography/Description";
-import styled from "styled-components";
 
 import SingleSelect from "./styled-components/single-select/SingleSelect";
 import MultiSelect from "./styled-components/multi-select/MultiSelect";
 import BubbleSelect from "./styled-components/bubble-select/BubbleSelect";
 import CircularProgress from "./styled-components/progress-bars/CircularProgress";
-
-const StyledQuiz = styled.div.attrs(props => ({
-	// $pimaryColor: props.$pimaryColor || '#F2F3F5',
-}))`
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding: 20px;
-	padding-top: 40px;
-	gap: 12px;
-`;
 
 export default function QuizeClient ({question, length}) {
 	const router = useRouter()
@@ -156,12 +143,12 @@ export default function QuizeClient ({question, length}) {
 							}}
 						/>
 
-						<StyledQuiz>
+						<div className="quiz_container">
 							<Title>{question.question[selectedLanguage]}</Title>
 							<Description>{question.description[selectedLanguage]}</Description>
 
 							{renderSelect(question.type)}
-						</StyledQuiz>
+						</div>
 					</>	
 			}
 		</>

@@ -55,7 +55,7 @@ export default function EmailClient () {
 				/>
 			</div>
 
-			<div style={{marginTop: 'auto', width: '100%', display: 'flex', flexDirection:'column', alignItems:'center', justifyContent: 'center'}}>
+			<div className="footer_container">
 				<SecondaryButton onHandleClick={() => generateFile(result, selectedLanguage)}>
 					<Image
 						src={"./img/download.svg"}
@@ -76,7 +76,6 @@ export default function EmailClient () {
 					Retake quiz
 				</PrimaryButton>
 			</div>
-			
 		</div>
 	)
 }
