@@ -1,9 +1,14 @@
 import styles from "./page.module.css";
+import PrimaryButton from "./client/styled-components/buttons/PrimaryButton";
+import Link from "next/link";
 
 export default function Home() {
 	
   return (
-    <main className={styles.main}>
+    <main className="page_container">
+			<Link href="/quiz/language">
+				<PrimaryButton>Start quiz</PrimaryButton>
+			</Link>
     </main>
   );
 }
