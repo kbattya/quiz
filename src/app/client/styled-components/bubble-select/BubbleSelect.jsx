@@ -45,7 +45,13 @@ function getNestedValue(obj, path) {
   return path.split('.').reduce((acc, part) => acc && acc[part], obj);
 }
 
-export default function BubbleSelect ({ isColumn, items, onHandleSubmit, value }) {
+export default function BubbleSelect ({
+	isColumn,
+	items,
+	onHandleSubmit,
+	value,
+	selectedLanguage 
+}) {
 	const [selectedItems, setSelectedItems] = useState([])
 
 	return (
@@ -84,7 +90,10 @@ export default function BubbleSelect ({ isColumn, items, onHandleSubmit, value }
 				disabled={selectedItems.length === 0}
 				onHandleClick={() => onHandleSubmit(selectedItems)}
 			>
-				Next
+				{selectedLanguage === 'en' && "Next"}
+				{selectedLanguage === 'fr' && "Suivante"}
+				{selectedLanguage === 'de' && "Nächste"}
+				{selectedLanguage === 'en' && "Próxima"}
 			</PrimaryButton>
 		</>
 	)

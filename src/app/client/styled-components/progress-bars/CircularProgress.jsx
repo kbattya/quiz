@@ -53,7 +53,12 @@ const CircularProgress = ({ loadingProgress }) => {
             <ProgressValue >{loadingProgress}%</ProgressValue>
           </StyledProgress>
       </Container>
-			<Text>Finding collections for you...</Text>
+			<Text>
+				{selectedLanguage === 'en' && "Finding collections for you..."}
+				{selectedLanguage === 'fr' && "Trouver des collections pour vous..."}
+				{selectedLanguage === 'de' && "Sammlungen für Sie finden …"}
+				{selectedLanguage === 'en' && "Encontrando colecciones para ti..."}
+			</Text>
 		</div>
 	)
 };

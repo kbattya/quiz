@@ -13,15 +13,80 @@ export default function EmailClient () {
 	const router = useRouter()
 	const [email, setEmail] = useState('')
 	const [isEmailValid, setIsEmailValid] = useState(true)
+	const [selectedLanguage, setSelectedLanguage] = useState()
+	const [result, setResult] = useState([])
+
+	useEffect(() => {
+		let res = localStorage.getItem("quiz_results")
+		if (res !== null) {
+			setResult(JSON.parse(res))
+		}
+
+		if (localStorage.getItem("quiz_selected_lang")) {
+			let lang = JSON.parse(localStorage.getItem("quiz_selected_lang")).toLocaleLowerCase()
+	
+			switch (lang) {
+				case "german": setSelectedLanguage('de'); return
+				case "french": setSelectedLanguage('fr'); return
+				case "english": setSelectedLanguage('en'); return
+				case "spanish": setSelectedLanguage('es'); return
+			}
+		} else {
+			setSelectedLanguage('en')
+		}
+		
+	}, [])
 
 	useEffect(() => {
 		setIsEmailValid(EmailValidator.validate(email))
 	}, [email])
 
+	const onHandleNext = () => {
+		let res 
+		const question = {
+			type: "email",
+			question: {
+				en: "Email",
+				fr: "E-mail",
+				de: "Email",
+				en: "Correo electrónico",
+			}
+		}
+		const answer = {
+			text: {
+				en: email,
+				fr: email,
+				de: email,
+				es: email,
+			}
+		}
+
+		if (result.some((res) => res.question.type === "email")) {
+			res = result.map((res) => res.question.type === "email" ? { question, answer } : res)
+		} else {
+			res = [...result, { question, answer }]
+		}
+
+		localStorage.setItem("quiz_results", JSON.stringify(res))
+		setResult(res)
+
+		router.push(`/download`);
+	}
+
 	return (
 		<div className="page_container">
-			<Title>Email</Title>
-			<Description>Enter your email to get full access</Description>
+			<Title>
+				{selectedLanguage === 'en' && "Email"}
+				{selectedLanguage === 'fr' && "E-mail"}
+				{selectedLanguage === 'de' && "Email"}
+				{selectedLanguage === 'es' && "Correo electrónico"}
+			</Title>
+			<Description>
+				{selectedLanguage === 'en' && "Enter your email to get full access"}
+				{selectedLanguage === 'fr' && "Entrez votre email pour obtenir un accès complet"}
+				{selectedLanguage === 'de' && "Geben Sie Ihre E-Mail ein, um vollen Zugriff zu erhalten"}
+				{selectedLanguage === 'es' && "Introduce tu email para obtener acceso completo"}
+			</Description>
 
 			<TextInput
 				value={email}
@@ -40,11 +105,12 @@ export default function EmailClient () {
 			
 			<PrimaryButton
 				disabled={email.trim().length === 0 || !isEmailValid}
-				onHandleClick={() => {	
-					router.push(`/download`);
-				}}
+				onHandleClick={onHandleNext}
 			>
-				Next
+				{selectedLanguage === 'en' && "Next"}
+				{selectedLanguage === 'fr' && "Suivante"}
+				{selectedLanguage === 'de' && "Nächste"}
+				{selectedLanguage === 'es' && "Próxima"}
 			</PrimaryButton>	
 		</div>
 	)

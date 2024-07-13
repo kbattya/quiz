@@ -41,8 +41,20 @@ export default function EmailClient () {
 
 	return (
 		<div className="page_container">
-			<div className={niconne.className}><Title size="36px">Thank you</Title></div>
-			<Description>for supporting us and passing quiz</Description>
+			<div className={niconne.className}>
+				<Title size="36px">
+					{selectedLanguage === 'en' && "Thank you"}
+					{selectedLanguage === 'fr' && "Merci"}
+					{selectedLanguage === 'de' && "Danke"}
+					{selectedLanguage === 'es' && "Gracias"}
+				</Title>
+			</div>
+			<Description>
+				{selectedLanguage === 'en' && "for supporting us and passing quiz"}
+				{selectedLanguage === 'fr' && "pour nous avoir soutenu et avoir réussi le quiz"}
+				{selectedLanguage === 'de' && "für die Unterstützung und das Bestehen des Quiz"}
+				{selectedLanguage === 'es' && "Por apoyarnos y aprobar el examen"}
+			</Description>
 
 			<div style={{padding: '40px 10px'}}>
 				<Image
@@ -64,7 +76,10 @@ export default function EmailClient () {
 						quality={80} 
 						alt="download icon"
 					/>
-					Download my answers
+					{selectedLanguage === 'en' && "Download my answers"}
+					{selectedLanguage === 'fr' && "Téléchargez mes réponses"}
+					{selectedLanguage === 'de' && "Meine Antworten herunterladen"}
+					{selectedLanguage === 'es' && "Descarga mis respuestas"}
 				</SecondaryButton>
 
 				<PrimaryButton
@@ -73,7 +88,10 @@ export default function EmailClient () {
 						router.push(`/quiz/language`);
 					}}
 				>
-					Retake quiz
+					{selectedLanguage === 'en' && "Retake quiz"}
+					{selectedLanguage === 'fr' && "Refaire le quiz"}
+					{selectedLanguage === 'de' && "Quiz wiederholen"}
+					{selectedLanguage === 'es' && "Volver a hacer el cuestionario"}
 				</PrimaryButton>
 			</div>
 		</div>

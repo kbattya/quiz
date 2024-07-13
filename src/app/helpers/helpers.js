@@ -7,7 +7,7 @@ export const generateFile = async(result, selectedLanguage) =>{
 			ORDER: index+1,
 			TITLE: item.question.question[selectedLanguage],
 			TYPE: item.question.type,
-			ANSWER: item.question.type === 'single-select'
+			ANSWER: item.question.type === 'single-select' || item.question.type === 'email'
 								? item.answer.text[selectedLanguage]
 								: item.answers.map((a) => a.text[selectedLanguage]).join(', ')
 		}

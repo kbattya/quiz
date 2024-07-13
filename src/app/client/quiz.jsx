@@ -81,6 +81,32 @@ export default function QuizeClient ({question, length}) {
 		}
 	}
 
+	const renderSelect = (type) => {
+		switch(type) {
+			case 'single-select':
+				return  <SingleSelect
+									isColumn={question.answers.length > 3}
+									items={question.answers}
+									onHandleClick={(answer) => onHandleSelect(answer)}
+									value={`text.${selectedLanguage}`}
+								/>;
+			case 'multiply-select':
+				return 	<MultiSelect
+									items={question.answers}
+									value={`text.${selectedLanguage}`}
+									onHandleSubmit={onHandleSubmit}
+									selectedLanguage={selectedLanguage}
+								/>
+			case 'bubble-select':
+				return  <BubbleSelect
+									items={question.answers}
+									value={`text.${selectedLanguage}`}
+									onHandleSubmit={onHandleSubmit}
+									selectedLanguage={selectedLanguage}
+								/>
+		}
+	}
+
 	function onStartLoading() {
 		setIsFormSubmited(true)
 		setIsLoading(true)
@@ -97,30 +123,6 @@ export default function QuizeClient ({question, length}) {
 				router.push(`/email`)
 			}, 300)
 		}, 5000);
-	}
-
-	function renderSelect(type) {
-		switch(type) {
-			case 'single-select':
-				return <SingleSelect
-									isColumn={question.answers.length > 3}
-									items={question.answers}
-									onHandleClick={(answer) => onHandleSelect(answer)}
-									value={`text.${selectedLanguage}`}
-								/>;
-			case 'multiply-select':
-				return <MultiSelect
-								items={question.answers}
-								value={`text.${selectedLanguage}`}
-								onHandleSubmit={onHandleSubmit}
-							/>
-			case 'bubble-select':
-				return <BubbleSelect
-								items={question.answers}
-								value={`text.${selectedLanguage}`}
-								onHandleSubmit={onHandleSubmit}
-							/>
-		}
 	}
 	
 
