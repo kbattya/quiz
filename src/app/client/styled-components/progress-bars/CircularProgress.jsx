@@ -45,7 +45,7 @@ const ProgressValue = styled.div.attrs(props => ({
   color: #FFFFFF;
 `;
 
-const CircularProgress = ({ loadingProgress }) => {
+const CircularProgress = ({ loadingProgress, children }) => {
   return (
 		<div className="page_container">
 			<Container>
@@ -54,10 +54,7 @@ const CircularProgress = ({ loadingProgress }) => {
           </StyledProgress>
       </Container>
 			<Text>
-				{selectedLanguage === 'en' && "Finding collections for you..."}
-				{selectedLanguage === 'fr' && "Trouver des collections pour vous..."}
-				{selectedLanguage === 'de' && "Sammlungen für Sie finden …"}
-				{selectedLanguage === 'en' && "Encontrando colecciones para ti..."}
+				{children}
 			</Text>
 		</div>
 	)

@@ -19,6 +19,21 @@ export default function QuizeClient ({question, length}) {
 	const [isLoading, setIsLoading] = useState(false)
 	const [loadingProgress, setLoadingProgress] = useState(0)
 
+	const translate = {
+		en: {
+			loading_text: 'Finding collections for you...',
+		},
+		fr: {
+			loading_text: 'Trouver des collections pour vous...',
+		},
+		de: {
+			loading_text: 'Sammlungen für Sie finden…',
+		},
+		es: {
+			loading_text: 'Encontrando colecciones para ti...',
+		}
+	}
+
 	useEffect(() => {
 		let res = localStorage.getItem("quiz_results")
 		if (res !== null) {
@@ -129,7 +144,12 @@ export default function QuizeClient ({question, length}) {
 	return (
 		<>
 			{isFormSubmited
-				? isLoading && <CircularProgress loadingProgress={loadingProgress} />
+				? isLoading &&
+					<CircularProgress
+						loadingProgress={loadingProgress}	
+					>
+						{translate[selectedLanguage]?.loading_text}
+					</CircularProgress>
 				: <>
 						<LinearProgress
 							length={length}

@@ -3,18 +3,85 @@
 import React, { useEffect, useState } from "react";
 import Title from "../client/styled-components/typography/Title";
 import Description from "../client/styled-components/typography/Description";
-import Link from "next/link";
-import * as EmailValidator from 'email-validator';
 import PrimaryButton from "../client/styled-components/buttons/PrimaryButton";
 import TextInput from "../client/styled-components/text-input/TextInput";
 import { useRouter } from "next/navigation";
 
-export default function EmailClient () {
+
+export default function Email () {
 	const router = useRouter()
 	const [email, setEmail] = useState('')
 	const [isEmailValid, setIsEmailValid] = useState(true)
 	const [selectedLanguage, setSelectedLanguage] = useState()
 	const [result, setResult] = useState([])
+
+	const translate = {
+		en: {
+			title: 'Email',
+			description: 'Enter your email to get full access',
+			input: {
+				placeholder: 'Your email',
+				validation_error: {
+					empty: 'Please enter your email',
+					invalid: 'Please enter valid email'
+				}
+			},
+			privacy: `By continuing I agree with 
+						<a href="">Privacy policy</a> and 
+						<a href="">Terms of use</a>.`,
+			button: 'Next'
+		},
+		fr: {
+			title: 'E-mail',
+			description: 'Entrez votre email pour obtenir un accès complet',
+			input: {
+				placeholder: 'Votre email',
+				validation_error: {
+					empty: 'Veuillez entrer votre email',
+					invalid: 'Veuillez entrer une adresse e-mail valide'
+				}
+			},
+			privacy: `En continuant, j'accepte la
+						<a href="">Politique de confidentialité</a> et 
+						<a href="">Conditions d'utilisation</a>.`,
+			button: 'Suivante'
+		},
+		de: {
+			title: 'Email',
+			description: 'Geben Sie Ihre E-Mail ein, um vollen Zugriff zu erhalten',
+			input: {
+				placeholder: 'Deine E-Mail',
+				validation_error: {
+					empty: 'Bitte geben Sie ihre E-Mail-Adresse ein',
+					invalid: 'Bitte eine gültige Email eingeben'
+				}
+			},
+			privacy: `Indem ich fortfahre, stimme ich der
+						<a href="">Datenschutzrichtlinie</a> und den 
+						<a href="">Nutzungsbedingungen zu</a>.`,
+			button: 'Nächste'
+		},
+		es: {
+			title: 'Correo electrónico',
+			description: 'Introduce tu email para obtener acceso completo',
+			input: {
+				placeholder: 'Tu correo electrónico',
+				validation_error: {
+					empty: 'Por favor introduzca su correo electrónico',
+					invalid: 'Por favor introduzca un correo electrónico válido'
+				}
+			},
+			privacy: `Al continuar, acepto la 
+						<a href="">Política de privacidad</a> y 
+						<a href="">Condiciones de uso.</a>.`,
+			button: 'Próxima'
+		}
+	}	
+
+	function validateEmail(email) {
+		const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+		return regex.test(email);
+	 }
 
 	useEffect(() => {
 		let res = localStorage.getItem("quiz_results")
@@ -24,6 +91,7 @@ export default function EmailClient () {
 
 		if (localStorage.getItem("quiz_selected_lang")) {
 			let lang = JSON.parse(localStorage.getItem("quiz_selected_lang")).toLocaleLowerCase()
+			console.log(lang)
 	
 			switch (lang) {
 				case "german": setSelectedLanguage('de'); return
@@ -38,7 +106,7 @@ export default function EmailClient () {
 	}, [])
 
 	useEffect(() => {
-		setIsEmailValid(EmailValidator.validate(email))
+		setIsEmailValid(validateEmail(email))
 	}, [email])
 
 	const onHandleNext = () => {
@@ -74,44 +142,35 @@ export default function EmailClient () {
 	}
 
 	return (
-		<div className="page_container">
-			<Title>
-				{selectedLanguage === 'en' && "Email"}
-				{selectedLanguage === 'fr' && "E-mail"}
-				{selectedLanguage === 'de' && "Email"}
-				{selectedLanguage === 'es' && "Correo electrónico"}
-			</Title>
-			<Description>
-				{selectedLanguage === 'en' && "Enter your email to get full access"}
-				{selectedLanguage === 'fr' && "Entrez votre email pour obtenir un accès complet"}
-				{selectedLanguage === 'de' && "Geben Sie Ihre E-Mail ein, um vollen Zugriff zu erhalten"}
-				{selectedLanguage === 'es' && "Introduce tu email para obtener acceso completo"}
-			</Description>
+		selectedLanguage && 
+			<div className="page_container">
+				<Title>
+					{translate[selectedLanguage]?.title}
+				</Title>
+				<Description>
+					{translate[selectedLanguage]?.description}
+				</Description>
 
-			<TextInput
-				value={email}
-				setValue={setEmail}
-				placeholder="Your email" 
-				isHelperActive={!isEmailValid}
-				helperText={`Please enter ${email.trim().length === 0 ? 'your' : 'valid'} email`}
-			/>
+				<TextInput
+					value={email}
+					setValue={setEmail}
+					placeholder={translate[selectedLanguage]?.input?.placeholder}
+					isHelperActive={!isEmailValid}
+					helperText={email.trim().length === 0
+												? translate[selectedLanguage]?.input?.validation_error.empty
+												: translate[selectedLanguage]?.input?.validation_error.invalid}
+				/>
 
-			<Description size="12px">
-				By continuing I agree with 
-				<Link href="" style={{color: "#D0006E"}}> Privacy policy</Link> and 
-				<Link href="" style={{color: "#D0006E"}}> Terms</Link> of use.
-			</Description>
-
-			
-			<PrimaryButton
-				disabled={email.trim().length === 0 || !isEmailValid}
-				onHandleClick={onHandleNext}
-			>
-				{selectedLanguage === 'en' && "Next"}
-				{selectedLanguage === 'fr' && "Suivante"}
-				{selectedLanguage === 'de' && "Nächste"}
-				{selectedLanguage === 'es' && "Próxima"}
-			</PrimaryButton>	
-		</div>
+				<Description size="12px">
+					<p dangerouslySetInnerHTML={{ __html: translate[selectedLanguage]?.privacy }} />
+				</Description>
+				
+				<PrimaryButton
+					disabled={email.trim().length === 0 || !isEmailValid}
+					onHandleClick={onHandleNext}
+				>
+					{translate[selectedLanguage]?.button}
+				</PrimaryButton>	
+			</div>
 	)
 }

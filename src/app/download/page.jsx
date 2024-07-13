@@ -13,10 +13,37 @@ import { generateFile } from "../helpers/helpers";
 
 const niconne = Niconne({ subsets: ['latin'], weight: ['400']});
 
-export default function EmailClient () {
+export default function Donwload () {
 	const router = useRouter()
 	const [result, setResult] = useState([])
 	const [selectedLanguage, setSelectedLanguage] = useState()
+
+	const translate = {
+		en: {
+			title: 'Thank you',
+			description: 'for supporting us and passing quiz',
+			download: "Download my answers",
+			retake: 'Retake quiz'
+		},
+		fr: {
+			title: 'Merci',
+			description: 'pour nous avoir soutenu et avoir réussi le quiz',
+			download: "Téléchargez mes réponses",
+			retake: 'Refaire le quiz'
+		},
+		de: {
+			title: 'Danke',
+			description: 'für die Unterstützung und das Bestehen des Quiz',
+			download: "Meine Antworten herunterladen",
+			retake: 'Quiz wiederholen'
+		},
+		es: {
+			title: 'Gracias',
+			description: 'Por apoyarnos y aprobar el examen',
+			download: "Descarga mis respuestas",
+			retake: 'Volver a hacer el cuestionario'
+		}
+	}
 
 	useEffect(() => {
 		let res = localStorage.getItem("quiz_results")
@@ -43,17 +70,11 @@ export default function EmailClient () {
 		<div className="page_container">
 			<div className={niconne.className}>
 				<Title size="36px">
-					{selectedLanguage === 'en' && "Thank you"}
-					{selectedLanguage === 'fr' && "Merci"}
-					{selectedLanguage === 'de' && "Danke"}
-					{selectedLanguage === 'es' && "Gracias"}
+					{translate[selectedLanguage]?.title}
 				</Title>
 			</div>
 			<Description>
-				{selectedLanguage === 'en' && "for supporting us and passing quiz"}
-				{selectedLanguage === 'fr' && "pour nous avoir soutenu et avoir réussi le quiz"}
-				{selectedLanguage === 'de' && "für die Unterstützung und das Bestehen des Quiz"}
-				{selectedLanguage === 'es' && "Por apoyarnos y aprobar el examen"}
+				{translate[selectedLanguage]?.description}
 			</Description>
 
 			<div style={{padding: '40px 10px'}}>
@@ -76,10 +97,7 @@ export default function EmailClient () {
 						quality={80} 
 						alt="download icon"
 					/>
-					{selectedLanguage === 'en' && "Download my answers"}
-					{selectedLanguage === 'fr' && "Téléchargez mes réponses"}
-					{selectedLanguage === 'de' && "Meine Antworten herunterladen"}
-					{selectedLanguage === 'es' && "Descarga mis respuestas"}
+					{translate[selectedLanguage]?.download}
 				</SecondaryButton>
 
 				<PrimaryButton
@@ -88,10 +106,7 @@ export default function EmailClient () {
 						router.push(`/quiz/language`);
 					}}
 				>
-					{selectedLanguage === 'en' && "Retake quiz"}
-					{selectedLanguage === 'fr' && "Refaire le quiz"}
-					{selectedLanguage === 'de' && "Quiz wiederholen"}
-					{selectedLanguage === 'es' && "Volver a hacer el cuestionario"}
+					{translate[selectedLanguage]?.retake}
 				</PrimaryButton>
 			</div>
 		</div>
