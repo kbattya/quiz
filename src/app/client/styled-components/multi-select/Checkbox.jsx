@@ -56,26 +56,22 @@ export default function Checkbox ({
 		}
 	}, [isChecked])
 
-  const handleCheckboxChange = (e) => {
-    setIsChecked(e.target.checked);
-  };
-
 	return (
 		<StyledCheckboxButton
-			onClick={(e) => {
-				e.stopPropagation();
-				setIsChecked(!isChecked);
-			}}
+			onClick={() => setIsChecked(!isChecked)}
 			$active={selectedItems.includes(id)}
 		>
-			<label htmlFor={html_id} style={{textAlign: "start"}}>
+			<label
+				htmlFor={html_id}
+				style={{textAlign: "start"}}
+				onClick={(e) => e.preventDefault()}
+			>
 				{value}
 			</label>
 			<StyledCheckboxInput
 				type="checkbox"
 				id={html_id}
 				checked={isChecked}
-				onChange={handleCheckboxChange}
 			/>
 		</StyledCheckboxButton>
 	)
