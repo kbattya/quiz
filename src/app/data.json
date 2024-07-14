@@ -503,34 +503,34 @@
 				{
 					"id": 510001,
 					"text": {
-						"en": "Werewolf",
-						"fr": "Loup-garou",
-						"de": "Werwolf",
-						"es": "Hombre-lobo"
+						"en": "Biography",
+						"fr": "Biographie",
+						"de": "Biografie",
+						"es": "Biografía"
 					},
-					"img_URL": "/img/wolf.svg",
+					"img_URL": "/img/Open_Book_Emoji_grande.webp",
 					"next": null
 				},
 				{
 					"id": 510002,
 					"text": {
-						"en": "Action",
-						"fr": "Action",
-						"de": "Aktion",
-						"es": "Acción"
+						"en": "Folklore",
+						"fr": "Folklore",
+						"de": "Folklore",
+						"es": "Folklore"
 					},
-					"img_URL": "/img/dancing.svg",
+					"img_URL": "/img/Open_Book_Emoji_grande.webp",
 					"next": null
 				},
 				{
 					"id": 510003,
 					"text": {
-						"en": "Royal Obsession",
-						"fr": "Obsession royale",
-						"de": "Königliche Besessenheit",
-						"es": "Obsesión real"
+						"en": "Historical Fiction",
+						"fr": "Fiction historique",
+						"de": "Historische Fiktion",
+						"es": "Ficción histórica"
 					},
-					"img_URL": "/img/queen.svg",
+					"img_URL": "/img/Open_Book_Emoji_grande.webp",
 					"next": null
 				}
 			],
