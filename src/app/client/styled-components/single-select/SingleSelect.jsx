@@ -46,6 +46,7 @@ export default function SingleSelect ({ isColumn, items, onHandleClick, value })
 					>	
 						{item?.img_URL && 
 							<Image
+								priority
 								src={item?.img_URL}
 								height={52}
 								width={52}

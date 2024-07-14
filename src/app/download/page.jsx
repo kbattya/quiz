@@ -79,7 +79,7 @@ export default function Donwload () {
 
 			<div style={{padding: '40px 10px'}}>
 				<Image
-					priority={1}
+					priority
 					src={"./img/checkmark.svg"}
 					height={118}
 					width={118}
@@ -91,6 +91,7 @@ export default function Donwload () {
 			<div className="footer_container">
 				<SecondaryButton onHandleClick={() => generateFile(result, selectedLanguage)}>
 					<Image
+						priority
 						src={"./img/download.svg"}
 						height={42}
 						width={42}

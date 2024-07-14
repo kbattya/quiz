@@ -44,7 +44,7 @@ export default function MultiSelect ({items, value, onHandleSubmit, selectedLang
 				{selectedLanguage === 'en' && "Next"}
 				{selectedLanguage === 'fr' && "Suivante"}
 				{selectedLanguage === 'de' && "Nächste"}
-				{selectedLanguage === 'en' && "Próxima"}
+				{selectedLanguage === 'es' && "Próxima"}
 			</PrimaryButton>
 		</>
 	)

@@ -72,6 +72,7 @@ export default function BubbleSelect ({
 						>
 							{item?.img_URL !== null && 
 								<Image
+									priority
 									src={item?.img_URL}
 									height={25}
 									width={25}
