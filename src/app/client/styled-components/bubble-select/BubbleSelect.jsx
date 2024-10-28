@@ -94,7 +94,7 @@ export default function BubbleSelect ({
 				{selectedLanguage === 'en' && "Next"}
 				{selectedLanguage === 'fr' && "Suivante"}
 				{selectedLanguage === 'de' && "Nächste"}
-				{selectedLanguage === 'en' && "Próxima"}
+				{selectedLanguage === 'es' && "Próxima"}
 			</PrimaryButton>
 		</>
 	)

@@ -91,7 +91,6 @@ export default function Email () {
 
 		if (localStorage.getItem("quiz_selected_lang")) {
 			let lang = JSON.parse(localStorage.getItem("quiz_selected_lang")).toLocaleLowerCase()
-			console.log(lang)
 	
 			switch (lang) {
 				case "german": setSelectedLanguage('de'); return
@@ -117,7 +116,7 @@ export default function Email () {
 				en: "Email",
 				fr: "E-mail",
 				de: "Email",
-				en: "Correo electrónico",
+				es: "Correo electrónico",
 			}
 		}
 		const answer = {
